@@ -32,4 +32,21 @@ class CommandUtilTest {
         // § is the character used for colors in Bukkit
         verify(mockSender).sendMessage("§cYou must be a player.");
     }
+
+    @Test
+    void testRequirePlayer_NullSender() {
+        // Note: Current implementation throws NPE when sender is null
+        assertThrows(NullPointerException.class, () -> {
+            CommandUtil.requirePlayer(null, "Error message");
+        });
+    }
+
+    @Test
+    void testRequirePlayer_NullMessage() {
+        CommandSender mockSender = mock(CommandSender.class);
+        Player result = CommandUtil.requirePlayer(mockSender, null);
+
+        assertNull(result, "Should return null when sender is not a player");
+        verify(mockSender, never()).sendMessage(anyString());
+    }
 }
