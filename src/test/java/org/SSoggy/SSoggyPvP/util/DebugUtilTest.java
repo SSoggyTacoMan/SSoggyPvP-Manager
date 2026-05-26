@@ -31,7 +31,7 @@ class DebugUtilTest {
 
         DebugUtil.logDebug(false, logger, message, params);
 
-        verify(logger, never()).log(any(Level.class), anyString(), any(Object[].class));
+        verifyNoInteractions(logger);
     }
 
     @Test
