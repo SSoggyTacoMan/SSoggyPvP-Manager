@@ -33,11 +33,7 @@ class ZoneManagerTest {
         MockitoAnnotations.openMocks(this);
 
         mockedBukkit = mockStatic(Bukkit.class);
-        Server mockServer = mock(Server.class);
         BukkitScheduler mockScheduler = mock(BukkitScheduler.class);
-
-        when(mockServer.getScheduler()).thenReturn(mockScheduler);
-        mockedBukkit.when(Bukkit::getServer).thenReturn(mockServer);
         mockedBukkit.when(Bukkit::getScheduler).thenReturn(mockScheduler);
 
         zoneManager = new ZoneManager(plugin);
