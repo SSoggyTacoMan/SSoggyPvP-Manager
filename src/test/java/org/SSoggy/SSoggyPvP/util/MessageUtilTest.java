@@ -25,13 +25,10 @@ class MessageUtilTest {
     @Test
     void testSendActionBarNullOrEmpty() {
         Player player = mock(Player.class);
-        Player.Spigot spigot = mock(Player.Spigot.class);
-        when(player.spigot()).thenReturn(spigot);
-
         MessageUtil.sendActionBar(player, null);
         MessageUtil.sendActionBar(player, "");
 
-        verifyNoInteractions(spigot);
+        verify(player, never()).spigot();
     }
 
     @Test
