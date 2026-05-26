@@ -59,9 +59,9 @@ class YamlUtilTest {
     }
 
     @Test
-    void testValidFile_loadSection_nulls() {
+    void testLoadSection_nullArguments(@TempDir File dataFolder) {
         assertNull(YamlUtil.loadSection(null, "config.yml", "test"));
-        assertNull(YamlUtil.loadSection(new File("."), null, "test"));
+        assertNull(YamlUtil.loadSection(dataFolder, null, "test"));
     }
 
     @Test
