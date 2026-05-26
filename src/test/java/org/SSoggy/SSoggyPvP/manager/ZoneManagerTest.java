@@ -96,10 +96,10 @@ class ZoneManagerTest {
 
     @Test
     void testIsInForcedPvPZone_DifferentWorld() {
-        World world1 = mock(World.class);
+        World world1 = mock(World.class, "world1");
         when(world1.getName()).thenReturn("world");
 
-        World world2 = mock(World.class);
+        World world2 = mock(World.class, "world2");
         when(world2.getName()).thenReturn("world_nether");
 
         UUID playerId = UUID.randomUUID();
