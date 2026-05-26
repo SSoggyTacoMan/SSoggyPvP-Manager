@@ -77,14 +77,14 @@ class YamlUtilTest {
     }
 
     @Test
-    void testValidFile_saveConfig_nulls() {
+    void testSaveConfig_nullArguments(@TempDir File dataFolder) {
         YamlConfiguration config = new YamlConfiguration();
         Logger logger = Mockito.mock(Logger.class);
 
         YamlUtil.saveConfig(config, null, "config.yml", logger, "Error");
         verify(logger).log(Level.WARNING, "Blocked potential path traversal attempt while saving: {0}", "config.yml");
 
-        YamlUtil.saveConfig(config, new File("."), null, logger, "Error");
+        YamlUtil.saveConfig(config, dataFolder, null, logger, "Error");
         verify(logger).log(Level.WARNING, "Blocked potential path traversal attempt while saving: {0}", (Object) null);
     }
 }
