@@ -35,7 +35,7 @@ class DebugUtilTest {
     }
 
     @Test
-    void testConstructorIsPrivate() throws Exception {
+    void testConstructorIsPrivate() throws ReflectiveOperationException {
         Constructor<DebugUtil> constructor = DebugUtil.class.getDeclaredConstructor();
         assertTrue(Modifier.isPrivate(constructor.getModifiers()), "Constructor should be private");
         constructor.setAccessible(true);
