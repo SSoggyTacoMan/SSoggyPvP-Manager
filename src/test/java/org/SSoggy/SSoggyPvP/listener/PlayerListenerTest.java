@@ -74,6 +74,8 @@ class PlayerListenerTest {
         PlayerJoinEvent event = new PlayerJoinEvent(player, "Joined");
         listener.onPlayerJoin(event);
 
+        verify(pvpManager).getPlayerData(playerId);
+
         verify(scheduler, never()).runTaskLater(any(), any(Runnable.class), anyLong());
     }
 
