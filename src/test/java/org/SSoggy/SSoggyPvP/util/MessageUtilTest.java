@@ -19,7 +19,7 @@ class MessageUtilTest {
 
         MessageUtil.sendActionBar(player, "&aHello");
 
-        verify(spigot).sendMessage(eq(ChatMessageType.ACTION_BAR), any(TextComponent.class));
+        verify(spigot).sendMessage(eq(ChatMessageType.ACTION_BAR), argThat(tc -> "§aHello".equals(tc.getText())));
     }
 
     @Test
