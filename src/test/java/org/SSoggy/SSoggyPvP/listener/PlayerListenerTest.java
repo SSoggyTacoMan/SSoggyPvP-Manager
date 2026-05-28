@@ -109,12 +109,7 @@ class PlayerListenerTest {
 
         // Test when player is online
         when(player.isOnline()).thenReturn(true);
-        // MessageUtil uses Spigot API inside, we can't fully test string formatting due to ChatColor, but let's test just the fact it calls something or we can mock MessageUtil?
-        // Wait, MessageUtil.send takes sender, string and uses sender.sendMessage
-        // We can just verify sendMessage on player
-
         task.run();
-        // sendMessage uses ChatColor.translateAlternateColorCodes
         verify(player).sendMessage(anyString());
     }
 
