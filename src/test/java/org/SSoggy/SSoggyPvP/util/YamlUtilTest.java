@@ -16,22 +16,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class YamlUtilTest {
 
+    @org.junit.jupiter.api.io.TempDir
     private File dataFolder;
-
-    @BeforeEach
-    public void setUp() throws IOException {
-        dataFolder = Files.createTempDirectory("ssoggypvp_test").toFile();
-    }
-
-    @AfterEach
-    public void tearDown() throws IOException {
-        if (dataFolder != null && dataFolder.exists()) {
-            Files.walk(dataFolder.toPath())
-                    .sorted(Comparator.reverseOrder())
-                    .map(Path::toFile)
-                    .forEach(File::delete);
-        }
-    }
 
     @Test
     public void testLoadSection_NullDataFolder() {
