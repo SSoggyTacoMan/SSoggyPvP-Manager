@@ -1,12 +1,5 @@
-🧪 Add tests for CombatListener.onEntityDamageByEntity
+🧪 [testing] Add unit tests for CommandUtil
 
-🎯 **What:** Added comprehensive unit tests for `CombatListener.onEntityDamageByEntity` to ensure the combat rules are applied correctly.
-📊 **Coverage:** The tests cover the following scenarios:
-  - Non-player victim (early return).
-  - Unresolvable attacker (early return).
-  - Self-damage (early return).
-  - Attacker has PvP disabled (event cancelled, message sent).
-  - Victim has PvP disabled (event cancelled, message sent).
-  - Both players have PvP enabled (event allowed).
-  - Attacker resolution for direct player, projectile, and tameable entities.
-✨ **Result:** Improved test coverage and confidence in the core PvP combat logic.
+🎯 **What:** Added missing unit test coverage for `CommandUtil.java`, specifically testing the `requirePlayer` method.
+📊 **Coverage:** Covered both successful execution when a `Player` sender is passed and failure scenarios (returning `null` and sending color-translated error messages) when a non-Player `CommandSender` is passed.
+✨ **Result:** Increased codebase reliability by ensuring the core utility method `requirePlayer` handles different implementations of Bukkit's `CommandSender` correctly as expected without regressions.
