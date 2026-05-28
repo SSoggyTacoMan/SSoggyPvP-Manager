@@ -56,7 +56,7 @@ public class PlayerListenerTest {
     }
 
     @AfterEach
-    void tearDown() throws Exception {
+    void tearDown() throws ReflectiveOperationException {
         Field serverField = Bukkit.class.getDeclaredField("server");
         serverField.setAccessible(true);
         serverField.set(null, null);
