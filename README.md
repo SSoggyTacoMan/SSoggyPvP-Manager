@@ -188,3 +188,6 @@ For bug reports, feature requests, or support, please open an issue on the GitHu
 ## License
 
 This plugin is licensed under GPL-3.0. See the LICENSE file for details.
+
+Note about usage of AI:
+i used ai for stuff like fixing bugs, getting feedback, coding the bukkit api stuff etc etc, stuff like that
