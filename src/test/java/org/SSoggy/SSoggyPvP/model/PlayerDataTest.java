@@ -50,19 +50,13 @@ class PlayerDataTest {
     }
 
     @Test
-    void testSetPvpDebtSecondsPositive() {
+    void testSetPvpDebtSeconds() {
         playerData.setPvpDebtSeconds(1800L);
         assertEquals(1800L, playerData.getPvpDebtSeconds(), "PvP debt should be set to positive value");
-    }
 
-    @Test
-    void testSetPvpDebtSecondsZero() {
         playerData.setPvpDebtSeconds(0L);
         assertEquals(0L, playerData.getPvpDebtSeconds(), "PvP debt should be set to 0");
-    }
 
-    @Test
-    void testSetPvpDebtSecondsNegativeClampsToZero() {
         playerData.setPvpDebtSeconds(-500L);
         assertEquals(0L, playerData.getPvpDebtSeconds(), "PvP debt should be clamped to 0 when negative value is set");
     }
